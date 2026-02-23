@@ -1,21 +1,74 @@
-const fullName = {
-    firstName : "Reda",
-    lastName : "Laghrissi"
+// function First(){
+//     return (
+//         <div>
+//             Hello From Component
+//         </div>
+//     )
+// }
+
+// Component Arrow Function
+// const First = ()=>{
+//     return (
+//         <div>
+//             Hello from Arrow function
+//         </div>
+//     )
+// }
+
+//Class Component
+
+// class First extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <h1>
+//                     Hello From
+//                 </h1>
+//             </div>
+//         )
+//     }
+// }
+
+//header Component
+function HeaderComponent() {
+  return (
+    <div className="fixed-header">
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact Us</a>
+      </nav>
+    </div>
+  );
 }
-function getName(name){
-    return name.firstName +' °° '+name.lastName
+
+//Container Component
+function ContainerComponent() {
+  return (
+    <div className="container">
+      <p>
+        Et proident cillum voluptate duis ea quis consectetur Lorem esse
+        exercitation.
+      </p>
+    </div>
+  );
 }
-const testValue = true;
-const inslineStyle = {
-    color : 'red',
-    fontSize : '9px'
+
+//Footer Comonent
+function FooterComponent() {
+  return (
+    <div className="fixed-footer">
+      <div className="container">Copyright &copy; 2026 React</div>
+    </div>
+  );
 }
 const element = (
-    <div>
-        <h1>Hello</h1>
-        <h2>World !!</h2>
-        <p style={inslineStyle}>Test Paragraph</p>
-    </div>
-)
-ReactDOM.createRoot(document.getElementById('app')).render(element)
-console.log('test')
+  <div>
+    <HeaderComponent />
+    <ContainerComponent />
+    <FooterComponent/>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("app"));
+root.render(element);
