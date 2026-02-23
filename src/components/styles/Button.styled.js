@@ -1,0 +1,19 @@
+import styled from "styled-components";
+
+export const StyledButton =styled.button`
+    position: absolute;
+    top: 50%;
+    background-color: #0a0a23;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 30px;
+    min-width: 120px;
+    transition: 0.7s;
+    &:hover{
+        background-color: #002ead;
+        transition: 0.7s;
+    }
+
+`
