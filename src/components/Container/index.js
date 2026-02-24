@@ -1,22 +1,37 @@
 //Container Component
 import './style.css'
+import { useState } from "react";
 import {styles} from '../style'
-import { StyledButton } from '../styles/Button.styled';
+import { StyledButton,FancyButton } from '../styles/Button.styled';
 export default function ContainerComponent() {
+  const [pos, setPos] = useState({ x: 400, y: 300 });
+
+  const moveFancy = () => {
+    const maxX = window.innerWidth - 150;
+    const maxY = window.innerHeight - 80;
+
+    setPos({
+      x: Math.random() * maxX,
+      y: Math.random() * maxY,
+    });
+  };
   return (
-    <div className={`container`}>
-      <p style={200>23?{...styles.paragraphStyle}:{}}>
-        Et proident cillum voluptate duis ea quis consectetur Lorem esse
-        exercitation.
-      </p>
-      <p style={styles.divStyle}>
-        Et proident cillum voluptate duis ea quis consectetur Lorem esse
-        exercitation.
-      </p>
-      <StyledButton>
+    <>
+    
+      <StyledButton variant = {'Outlines'}>
         Click ME
       </StyledButton>
-    </div>
+      <FancyButton
+        variant="kk"
+        $x={pos.x}
+        $y={pos.y}
+        onMouseEnter={moveFancy}
+      >
+        Fancy
+      </FancyButton>
+
+    
+    </>
   );
 }
 
